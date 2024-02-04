@@ -1,5 +1,7 @@
 <?php
 
+namespace PeltonSolutions\LaravelEnums;
+
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
 
