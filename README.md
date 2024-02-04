@@ -1,6 +1,6 @@
 # laravel-enums
 
-composer require peltonsolutions/laravel-enums
+`composer require peltonsolutions/laravel-enums`
 
 ## Example:
 
