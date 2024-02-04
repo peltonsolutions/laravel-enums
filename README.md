@@ -2,8 +2,9 @@
 
 composer require peltonsolutions/laravel-enums
 
-Example:
+## Example:
 
+```
 class ContentPageStatus extends \PeltonSolutions\LaravelEnums\Models\Enum
 {
 	const DRAFT = 'draft';
@@ -21,12 +22,20 @@ class ContentPageStatus extends \PeltonSolutions\LaravelEnums\Models\Enum
 		];
 	}
 }
+```
 
+```
 class ContentPage extends Model
 {
 	protected $casts = [
 		'status' => ContentPageStatus::class
 	];
 }
+```
 
-It throws a \PeltonSolutions\LaravelEnums\Models\Exceptions\InvalidEnumValueException exception if you attempt to set a value that is not in the map array.
+It throws a `\PeltonSolutions\LaravelEnums\Models\Exceptions\InvalidEnumValueException` exception if you attempt to set
+a value that is not in the map array.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
