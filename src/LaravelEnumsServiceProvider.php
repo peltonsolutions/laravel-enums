@@ -19,6 +19,6 @@ class LaravelEnumsServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		AboutCommand::add('My Package - Test', fn() => ['Version' => '1.0.0']);
+		AboutCommand::add('Pelton Solutions - Laravel Enums', fn() => ['Version' => '1.0.0']);
 	}
 }
