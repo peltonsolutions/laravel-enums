@@ -1,10 +1,15 @@
 # laravel-enums
 
-composer require peltonsolutions/laravel-enums
+laravel-enums is a powerful and versatile package by Pelton Solutions. It allows Laravel developers to work easily with
+enumerated values. Enums (short for 'enumerations') represent a set of named constants in your code. By introducing
+enums, this package significantly enhances the readability and maintainability of your code.
+
+In addition, you can optionally make your Enum fields nullable. To use this feature, simply have your Enum class extend
+the `NullableEnum` class.
 
 ## Example:
 
-```
+```php
 class ContentPageStatus extends \PeltonSolutions\LaravelEnums\Models\Enum
 {
 	const DRAFT = 'draft';
@@ -24,7 +29,7 @@ class ContentPageStatus extends \PeltonSolutions\LaravelEnums\Models\Enum
 }
 ```
 
-```
+```php
 class ContentPage extends Model
 {
 	protected $casts = [
@@ -33,9 +38,30 @@ class ContentPage extends Model
 }
 ```
 
-It throws a `\PeltonSolutions\LaravelEnums\Models\Exceptions\InvalidEnumValueException` exception if you attempt to set
-a value that is not in the map array.
+These examples demonstrate how you could use enumerations in a Laravel model. `ContentPageStatus` is an enumeration that
+represents the possible status values that a `ContentPage` could have. The `ContentPage` model includes a casting to
+this enumeration, enabling more robust input validation and a more explicit declaration of the possible 'status' values.
+The package ensures value validation by throwing
+a `\PeltonSolutions\LaravelEnums\Models\Exceptions\InvalidEnumValueException` exception if you try to set a value that
+is not in the specified enumeration.
+
+## Install
+
+You can install the package via composer using the following command:
+
+``` bash
+composer require peltonsolutions/laravel-enums
+```
+
+## Testing
+
+To ensure that laravel-enums is functioning correctly, you can run the package's tests using:
+
+``` bash
+composer test
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+laravel-enums is open-sourced software. It's licensed under the [MIT license](https://opensource.org/licenses/MIT),
+which is a permissive license allowing the software to be used, modified, and shared.

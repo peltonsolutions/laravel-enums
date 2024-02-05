@@ -22,7 +22,7 @@ class EnumCaster implements CastsAttributes
 		}
 
 		$enum = $model->getCasts()[$key];
-		if ($enum::validateValue($value)) {
+		if ((new $enum)->validateValue($value)) {
 			return $value;
 		}
 		throw new InvalidEnumValueException(get_class($model), $key, $value);
@@ -34,7 +34,7 @@ class EnumCaster implements CastsAttributes
 	public function set(Model $model, string $key, mixed $value, array $attributes)
 	{
 		$enum = $model->getCasts()[$key];
-		if ($enum::validateValue($value)) {
+		if ((new $enum)->validateValue($value)) {
 			return $value;
 		}
 		throw new InvalidEnumValueException(get_class($model), $key, $value);
