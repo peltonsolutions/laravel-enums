@@ -14,7 +14,6 @@ abstract class NullableEnum extends Enum
 
 	public function validateValue($value): bool
 	{
-		return false; // testing auto test suite
 		return is_null($value) || parent::validateValue($value);
 	}
 }
