@@ -1,6 +1,6 @@
 # laravel-enums
 
-laravel-enums is a powerful and versatile package by Pelton Solutions. It allows Laravel developers to work easily with
+laravel-enums is a package by Pelton Solutions that allows Laravel developers to work easily with
 enumerated values. Enums (short for 'enumerations') represent a set of named constants in your code. By introducing
 enums, this package significantly enhances the readability and maintainability of your code.
 
