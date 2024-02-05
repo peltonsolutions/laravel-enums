@@ -61,6 +61,15 @@ To ensure that laravel-enums is functioning correctly, you can run the package's
 composer test
 ```
 
+### Security
+
+If you discover any security-related issues, please
+email [security@peltonsolutions.com](mailto:security@peltonsolutions.com) instead of using the issue tracker.
+
+## Credits
+
+- [Nathan Pelton](https://www.nathanpelton.com)
+
 ## License
 
 laravel-enums is open-sourced software. It's licensed under the [MIT license](https://opensource.org/licenses/MIT),
