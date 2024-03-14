@@ -2,54 +2,54 @@
   "name": "peltonsolutions/laravel-enums",
   "description": "A custom package for Laravel for handling enum values on Models.",
   "keywords": [
-    "peltonsolutions",
-    "laravel",
-    "laravel-enums"
+	"peltonsolutions",
+	"laravel",
+	"laravel-enums"
   ],
   "homepage": "https://github.com/peltonsolutions/laravel-enums",
   "license": "MIT",
   "authors": [
-    {
-      "name": "Nathan Pelton",
-      "email": "npelton@gmail.com",
-      "homepage": "https://www.nathanpelton.com",
-      "role": "Developer"
-    }
+	{
+	  "name": "Nathan Pelton",
+	  "email": "npelton@gmail.com",
+	  "homepage": "https://www.nathanpelton.com",
+	  "role": "Developer"
+	}
   ],
   "require": {
-    "php": "^8.2",
-    "laravel/framework": "^10.10"
+	"php": "^8.2",
+	"laravel/framework": "^11.0"
   },
   "require-dev": {
-    "pestphp/pest": "^2.33",
-    "pestphp/pest-plugin-laravel": "^2.2"
+	"pestphp/pest": "^2.33",
+	"pestphp/pest-plugin-laravel": "^2.2"
   },
   "autoload": {
-    "psr-4": {
-      "PeltonSolutions\\LaravelEnums\\": "src/"
-    }
+	"psr-4": {
+	  "PeltonSolutions\\LaravelEnums\\": "src/"
+	}
   },
   "autoload-dev": {
-    "psr-4": {
-      "PeltonSolutions\\LaravelEnums\\Tests\\": "tests/"
-    }
+	"psr-4": {
+	  "PeltonSolutions\\LaravelEnums\\Tests\\": "tests/"
+	}
   },
   "scripts": {
-    "test": "vendor/bin/pest"
+	"test": "vendor/bin/pest"
   },
   "config": {
-    "sort-packages": true,
-    "allow-plugins": {
-      "pestphp/pest-plugin": true,
-      "phpstan/extension-installer": true
-    }
+	"sort-packages": true,
+	"allow-plugins": {
+	  "pestphp/pest-plugin": true,
+	  "phpstan/extension-installer": true
+	}
   },
   "extra": {
-    "laravel": {
-      "providers": [
-        "PeltonSolutions\\LaravelEnums\\LaravelEnumsServiceProvider"
-      ]
-    }
+	"laravel": {
+	  "providers": [
+		"PeltonSolutions\\LaravelEnums\\LaravelEnumsServiceProvider"
+	  ]
+	}
   },
   "minimum-stability": "dev",
   "prefer-stable": true
