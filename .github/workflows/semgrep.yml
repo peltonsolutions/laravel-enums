@@ -1,0 +1,46 @@
+name: Semgrep
+
+# Static security analysis for PHP via Semgrep community rules (no API key).
+# CodeQL has no PHP support, so this is the equivalent for these packages:
+# findings are published to the repo's Security tab (Code scanning) as SARIF.
+# Advisory for now — it does not fail the build; tighten later with --error.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'  # weekly catch-all, Mondays 06:00 UTC
+
+permissions:
+  contents: read
+  security-events: write   # upload SARIF to code scanning
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Semgrep
+        run: python -m pip install --quiet semgrep
+
+      # Community rulesets: PHP-specific + general security audit. Findings do
+      # not fail the job — they're published to the Security tab below.
+      - name: Run Semgrep
+        run: semgrep scan --config p/php --config p/security-audit --sarif --output semgrep.sarif
+
+      # Fork PRs can't write to code scanning (security-events is read-only for
+      # forks), so don't let that turn the check red — the scan still ran.
+      - name: Upload SARIF to code scanning
+        if: always()
+        continue-on-error: true
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
